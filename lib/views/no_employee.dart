@@ -6,6 +6,10 @@ class NoEmployee extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return SizedBox(
+      width: MediaQuery.sizeOf(context).width,
+      height: MediaQuery.sizeOf(context).height,
+      child: Center(child: Image.asset('/assets/no_employee.png',height: MediaQuery.sizeOf(context).height*0.2, width: MediaQuery.sizeOf(context).height*0.2,)),
+    );
   }
 }
