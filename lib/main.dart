@@ -1,9 +1,8 @@
 import 'package:employee_ri/controller/bloc/employee_bloc.dart';
-import 'package:flutter/material.dart';
-import 'package:path_provider/path_provider.dart' as path;
-
 import 'package:employee_ri/utils/bloc_observre.dart';
 import 'package:employee_ri/views/home_screen/homescreen.dart';
+import 'package:flutter/material.dart';
+import 'package:path_provider/path_provider.dart' as path;
 
 import 'controller/bloc_exports.dart';
 
@@ -24,7 +23,7 @@ class MyApp extends StatelessWidget {
     return BlocProvider(
       create: (context) => EmployeeBloc(),
       child: MaterialApp(
-        title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xff1DA1F2)),
           useMaterial3: false,
