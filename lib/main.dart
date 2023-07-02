@@ -20,7 +20,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
+    return BlocProvider<EmployeeBloc>(
+      lazy: false,
       create: (context) => EmployeeBloc(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xff1DA1F2)),
           useMaterial3: false,
         ),
+        // home: const MobileHomeScreen(),
         home: const HomeScreen(),
       ),
     );

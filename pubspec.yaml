@@ -39,13 +39,14 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_bloc: 
-  hydrated_bloc: 
-  flutter_screenutil: 
-  cached_network_image: 
+  flutter_bloc:
+  hydrated_bloc:
+  flutter_screenutil:
   path_provider: 
   equatable: 
-
+  table_calendar: ^3.0.9
+  intl:
+  fluttertoast:
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
@@ -69,10 +70,7 @@ flutter:
 #    - /assets/
   # To add assets to your application, add an assets section, like this:
   assets:
-    - asset/no_employee.png
-    - asset/emp_person.png
-    - asset/emp_date.png
-    - asset/emp_role.png
+    - asset/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -1,5 +1,5 @@
-import 'package:employee_ri/utils/responsive_layout.dart';
 import 'package:employee_ri/views/home_screen/mobile_homescreen.dart';
+import 'package:employee_ri/widgets/responsive_layout/responsive_layout.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {

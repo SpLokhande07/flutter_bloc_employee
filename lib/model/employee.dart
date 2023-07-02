@@ -5,29 +5,44 @@ import 'dart:convert';
 import 'package:equatable/equatable.dart';
 
 class Employee extends Equatable {
-  final String id;
-  final String name;
-  final String role;
-  final DateTime startDate;
-  final DateTime endDate;
+  final String? id;
+  final String? name;
+  final String? role;
+  final String? startDate;
+  final String? endDate;
   const Employee({
-    required this.id,
-    required this.name,
-    required this.role,
-    required this.startDate,
-    required this.endDate,
+    this.id,
+    this.name,
+    this.role,
+    this.startDate,
+    this.endDate,
   });
-  
+
   @override
   List<Object?> get props => [id, name, role, startDate, endDate];
+
+  Employee copyWith({
+    String? id,
+    String? name,
+    String? role,
+    String? startDate,
+    String? endDate,
+  }) {
+    return Employee(
+        startDate: startDate ?? this.startDate,
+        endDate: endDate ?? this.endDate,
+        role: role ?? this.role,
+        name: name ?? this.name,
+        id: id ?? this.id);
+  }
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'id': id,
       'name': name,
       'role': role,
-      'startDate': startDate.millisecondsSinceEpoch,
-      'endDate': endDate.millisecondsSinceEpoch,
+      'startDate': startDate ?? "",
+      'endDate': endDate ?? "",
     };
   }
 
@@ -36,12 +51,13 @@ class Employee extends Equatable {
       id: map['id'] as String,
       name: map['name'] as String,
       role: map['role'] as String,
-      startDate: DateTime.fromMillisecondsSinceEpoch(map['startDate'] as int),
-      endDate: DateTime.fromMillisecondsSinceEpoch(map['endDate'] as int),
+      startDate: map['startDate'],
+      endDate: map['endDate'],
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory Employee.fromJson(String source) => Employee.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory Employee.fromJson(String source) =>
+      Employee.fromMap(json.decode(source) as Map<String, dynamic>);
 }
