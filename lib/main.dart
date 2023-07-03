@@ -2,6 +2,7 @@ import 'package:employee_ri/controller/bloc/employee_bloc.dart';
 import 'package:employee_ri/utils/bloc_observre.dart';
 import 'package:employee_ri/views/home_screen/homescreen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:path_provider/path_provider.dart' as path;
 
 import 'controller/bloc_exports.dart';
@@ -20,6 +21,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
     return BlocProvider<EmployeeBloc>(
       lazy: false,
       create: (context) => EmployeeBloc(),
